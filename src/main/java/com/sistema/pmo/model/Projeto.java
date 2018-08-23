@@ -21,6 +21,12 @@ public class Projeto {
 	@ManyToOne
 	@JoinColumn(name="area_id")
 	private Area area;
+	@ManyToOne
+	@JoinColumn(name="patrocinador_id")
+	private Patrocinador patrocinador;
+	@ManyToOne
+	@JoinColumn(name="gp_id")
+	private GerenteProjetos gerenteProjetos;
 	
 	public Projeto() {
 		// TODO Auto-generated constructor stub
@@ -53,6 +59,21 @@ public class Projeto {
 	}
 	public void setArea(Area area) {
 		this.area = area;
+	}
+	
+	public Patrocinador getPatrocinador() {
+		return patrocinador;
+	}
+	
+	public void setPatrocinador(Patrocinador patrocinador) {
+		this.patrocinador = patrocinador;
+	}
+	
+	public GerenteProjetos getGerenteProjetos() {
+		return gerenteProjetos;
+	}
+	public void setGerenteProjetos(GerenteProjetos gerenteProjetos) {
+		this.gerenteProjetos = gerenteProjetos;
 	}
 	
 	

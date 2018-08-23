@@ -1,5 +1,6 @@
 package com.sistema.pmo.model;
 
+import java.util.List;
 import java.util.UUID;
 
 import javax.persistence.Column;
@@ -7,6 +8,7 @@ import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
@@ -25,6 +27,9 @@ public class GerenteProjetos {
 	
 	@Embedded
 	private Pessoa pessoa;
+	
+	@OneToMany(mappedBy="gerenteProjetos")
+	private List<Projeto> projetos;
 
 	public GerenteProjetos() {
 		// TODO Auto-generated constructor stub
